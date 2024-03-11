@@ -31,7 +31,7 @@ public class Module3Servlet extends HttpServlet {
                     + value.getOrder() + "</td><td>"
                     + value.getTopic() + "</td><td>"
                     + value.getDesc()
-                    + "</td><td><a href=''>Подробнее</a>"
+                    + "</td><td><a href='\"notExists\"'>Подробнее</a>"
                     + "</td></tr>");
         out.println("<button><a href=\"module2\"><- Предыдущий модуль</a></button>");
         out.println("<button><a href=\"module4\">Следующий модуль -></a></button>");
