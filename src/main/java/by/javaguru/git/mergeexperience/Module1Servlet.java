@@ -6,6 +6,8 @@ import by.javaguru.git.mergeexperience.topics.Module1Topics;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
+import static by.javaguru.git.mergeexperience.topics.Module1Topics.JAKARTA;
+
 @WebServlet("/module1")
 public class Module1Servlet extends HttpServlet {
     private String message;
@@ -22,13 +24,26 @@ public class Module1Servlet extends HttpServlet {
         out.println("<h1>" + message + "</h1>");
 
         out.println("<table>");
-        for (Module1Topics value : Module1Topics.values())
-            out.println("<tr><td>"
-                    + value.getOrder() + "</td><td>"
-                    + value.getTopic() + "</td><td>"
-                    + value.getDesc()
-                    + "</td><td><a href=''>Подробнее</a>"
-                    + "</td></tr>");
+        for (Module1Topics value : Module1Topics.values()){
+            if(value == JAKARTA){
+                out.println("<tr><td>"
+                        + value.getOrder() + "</td><td>"
+                        + value.getTopic() + "</td><td>"
+                        + value.getDesc()
+                        + "</td><td><a href=\"MoreDetailedModule1\">Подробнее</a>"
+                        + "</td></tr>");
+            } else {
+                out.println("<tr><td>"
+                        + value.getOrder() + "</td><td>"
+                        + value.getTopic() + "</td><td>"
+                        + value.getDesc()
+                        + "</td><td><a href=\"notExists\">Подробнее</a>"
+                        + "</td></tr>");
+            }
+
+        }
+
+
 
         out.println("</table>");
 
